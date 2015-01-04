@@ -1,9 +1,11 @@
 #!/usr/bin/ruby
-
+# works on OSX
 require 'java'
 
-lib_path = '/Users/liuxiao/Desktop/hiveResearch/lib/'
+lib_path = '/usr/local/Cellar/hive/0.14.0/libexec/lib'
 
+#brew install hive on OSX and the libs are at /usr/local/Cellar/hive/0.14.0/libexec/lib
+#for now I opted to import all the jars to avoid dependency hell.
 Dir.entries(lib_path).each do |jar|
 	require lib_path + jar if File.extname(jar) == '.jar'
 end
